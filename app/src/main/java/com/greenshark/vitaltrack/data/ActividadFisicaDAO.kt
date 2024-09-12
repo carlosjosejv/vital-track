@@ -4,7 +4,9 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
 
 /**
  * Created by Carlos Jiménez on 10-Sep-24.
@@ -25,4 +27,7 @@ interface ActividadFisicaDAO {
 
     @Delete
     suspend fun delete(registro: RegistroAF)
+
+    @Query("SELECT * from ActividadFisica ORDER BY tipo ASC")
+    fun obtenerRegistros(): Flow<List<RegistroAF>>
 }
