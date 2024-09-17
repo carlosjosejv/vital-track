@@ -12,8 +12,8 @@ data class RegistroAF(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val tipo: String,
-    val duracion: String,
-    val calorias: String
+    val duracion: Double,
+    val calorias: Double
 )
 
 
